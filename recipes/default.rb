@@ -44,8 +44,8 @@ end
 node.default['nodejs']['version'] = '0.10.26'
 include_recipe "nodejs::nodejs_from_binary"
 include_recipe "nodejs::npm"
-include_recipe "forever"
 include_recipe "nginx"
+include_recipe "supervisor"
 
 #create our nginx proxy template to the configured ghost port
 template "#{node.nginx.dir}/sites-available/ghost.conf" do
@@ -73,12 +73,12 @@ artifact_deploy "ghost" do
   after_deploy Proc.new {
     execute "cd #{node['ghost']['home']}/current && npm install --production"
     
-    forever_service "ghost" do
-      user 'root'
-      group 'root'
-      path "#{node['ghost']['home']}/current"
-      script "index.js"
-      description "Ghost Blog"
+    supervisor_service "ghost" do
+      user 'ghost'
+      process_name 'ghost'
+      command 'npm start'
+      directory "#{node['ghost']['home']}/current"
+      stdout_logfile '/var/log/ghost.log'
       action [ :enable, :start ]
     end
   }

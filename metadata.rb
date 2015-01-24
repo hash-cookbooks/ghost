@@ -9,5 +9,5 @@ version          '0.1.0'
 
 depends 'nodejs', '~> 2.2.0'
 depends 'artifact', '~> 1.12.2'
-depends 'forever', '~> 0.1.1'
 depends 'nginx', '~> 2.7.4'
+depends 'supervisor', '~> 0.4.12'
