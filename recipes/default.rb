@@ -76,7 +76,7 @@ artifact_deploy "ghost" do
     supervisor_service "ghost" do
       user 'ghost'
       process_name 'ghost'
-      command 'npm start'
+      command "NODE_ENV=#{node['ghost']['env']} npm start"
       directory "#{node['ghost']['home']}/current"
       stdout_logfile '/var/log/ghost.log'
       action [ :enable, :start ]

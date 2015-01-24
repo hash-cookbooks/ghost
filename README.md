@@ -41,9 +41,15 @@ TODO: List your supported platforms.
   </tr>
   <tr>
     <td><tt>['ghost']['port']</tt></td>
-    <td>String</td>
+    <td>Integer</td>
     <td>The port where ghost runs</td>
     <td><tt>2368</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['ghost']['env']</tt></td>
+    <td>String</td>
+    <td>Defines the NODE_ENV var</td>
+    <td><tt>production</tt></td>
   </tr>
 </table>
 

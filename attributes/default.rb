@@ -28,3 +28,4 @@ default['ghost']['group'] = 'ghost'
 default['ghost']['home'] = '/srv/ghost'
 default['ghost']['version'] = '0.5.8'
 default['ghost']['port'] = 2368
+default['ghost']['env'] = 'production'
