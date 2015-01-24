@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ghost-env
+# Cookbook Name:: ghost
 # Attribute:: default
 #
 # Copyright (C) 2015 Hendrik Schaeidt
@@ -26,5 +26,5 @@
 default['ghost']['user'] = 'ghost'
 default['ghost']['group'] = 'ghost'
 default['ghost']['home'] = '/srv/ghost'
-default['ghost']['version'] = 'latest'
+default['ghost']['version'] = '0.5.8'
 default['ghost']['port'] = 2368

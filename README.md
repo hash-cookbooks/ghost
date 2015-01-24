@@ -1,4 +1,4 @@
-# ghost-env-cookbook
+# ghost-cookbook
 
 Minimal cookbook to setup a working ghost blog with nginx as proxy.
 
@@ -37,7 +37,7 @@ TODO: List your supported platforms.
     <td><tt>['ghost']['version']</tt></td>
     <td>String</td>
     <td>The ghost version to install</td>
-    <td><tt>latest</tt></td>
+    <td><tt>0.5.8</tt></td>
   </tr>
   <tr>
     <td><tt>['ghost']['port']</tt></td>
@@ -49,14 +49,14 @@ TODO: List your supported platforms.
 
 ## Usage
 
-### ghost-env::default
+### ghost::default
 
-Include `ghost-env` in your node's `run_list`:
+Include `ghost` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[ghost-env::default]"
+    "recipe[ghost::default]"
   ]
 }
 ```

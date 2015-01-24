@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ghost-env
+# Cookbook Name:: ghost
 # Recipe:: default
 #
 # Copyright (C) 2015 Hendrik Schaeidt
@@ -42,14 +42,14 @@ directory "/srv/ghost" do
 end
 
 node.default['nodejs']['version'] = '0.10.26'
-include_recipe "nodejs::install_from_source"
+include_recipe "nodejs::nodejs_from_binary"
 include_recipe "nodejs::npm"
 include_recipe "forever"
 include_recipe "nginx"
 
 #create our nginx proxy template to the configured ghost port
 template "#{node.nginx.dir}/sites-available/ghost.conf" do
-  source "nginx.conf.erb"
+  source "nginx-ghost.conf.erb"
   mode "0644"
 end
 

@@ -1,9 +1,9 @@
-name             'ghost-env'
+name             'ghost'
 maintainer       'Hendrik Schaeidt'
 maintainer_email 'he.schaeidt@gmail.com'
 license          'MIT'
-description      'Installs/Configures ghost-env'
-long_description 'Installs/Configures ghost-env'
+description      'Installs/Configures ghost'
+long_description 'Installs/Configures ghost'
 
 version          '0.1.0'
 
