@@ -62,7 +62,7 @@ nginx_site "ghost.conf"
 
 artifact_deploy "ghost" do
   version           node['ghost']['version']
-  artifact_location "https://ghost.org/zip/ghost-#{node['ghost']['version']}.zip"
+  artifact_location "#{node['ghost']['source']}"
   deploy_to         node['ghost']['home']
   owner             node['ghost']['user']
   group             node['ghost']['group']
@@ -76,7 +76,8 @@ artifact_deploy "ghost" do
     supervisor_service "ghost" do
       user 'ghost'
       process_name 'ghost'
-      command "NODE_ENV=#{node['ghost']['env']} npm start"
+      command 'npm start'
+      environment Hash["NODE_ENV" => node['ghost']['env']]
       directory "#{node['ghost']['home']}/current"
       stdout_logfile '/var/log/ghost.log'
       action [ :enable, :start ]

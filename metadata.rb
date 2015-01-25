@@ -5,7 +5,7 @@ license          'MIT'
 description      'Installs/Configures ghost'
 long_description 'Installs/Configures ghost'
 
-version          '0.1.1'
+version          '0.1.3'
 
 depends 'nodejs', '~> 2.2.0'
 depends 'artifact', '~> 1.12.2'
