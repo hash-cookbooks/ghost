@@ -26,9 +26,9 @@
 default['ghost']['user'] = 'ghost'
 default['ghost']['group'] = 'ghost'
 default['ghost']['home'] = '/srv/ghost'
-default['ghost']['mirror'] = 'https://ghost.org/zip/'
+default['ghost']['mirror'] = 'https://github.com/TryGhost/Ghost/archive/'
 default['ghost']['version'] = '0.5.8'
-default['ghost']['package'] = "ghost-#{node['ghost']['version']}.zip"
+default['ghost']['package'] = "#{node['ghost']['version']}.zip"
 default['ghost']['source'] = "#{node['ghost']['mirror']}#{node['ghost']['package']}"
 default['ghost']['port'] = 2368
 default['ghost']['env'] = 'production'
